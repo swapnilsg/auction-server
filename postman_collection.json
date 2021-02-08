@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "245975aa-fa30-4462-8ad6-1b46b56a3247",
+		"name": "Better",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"subbu\",\n    \"userName\":\"subbu\",\n    \"email\":\"subbu@amazon\",\n    \"password\":\"subbu\",\n    \"role\":\"buyer\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/users/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"users",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"test7@test\",\n    \"password\":\"sdf\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create auction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"item\":\"The Happiness Advantage\",\n    \"description\":\"Our most commonly held formula for success is broken.\",\n    \"minBid\":\"300\",\n    \"maxBid\":\"3000\",\n    \"sellerId\":\"7507cfbe-c94d-4a09-a536-1c3f96890c32\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/auction/create",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"auction",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "acitve auctions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/auction/acitve",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"auction",
+						"acitve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bid for auction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"auctionId\":\"eb3993c5-35ee-43da-8a83-87c13089f7a2\",\n    \"userId\":\"76c0e8d7-99c5-4269-9ff9-9105379cb962\",\n    \"bid\":\"3000\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/auction/bid",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"auction",
+						"bid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "withdraw bid",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\" :\"76c0e8d7-99c5-4269-9ff9-9105379cb962\",\n    \"auctionId\":\"eb3993c5-35ee-43da-8a83-87c13089f7a2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/auction/withdraw",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"auction",
+						"withdraw"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "seller auctions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/auction/7507cfbe-c94d-4a09-a536-1c3f96890c32",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"auction",
+						"7507cfbe-c94d-4a09-a536-1c3f96890c32"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "close auction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"auctionId\":\"eb3993c5-35ee-43da-8a83-87c13089f7a2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/auction/close",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"auction",
+						"close"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get statement",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/auction/statment/eb3993c5-35ee-43da-8a83-87c13089f7a2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"auction",
+						"statment",
+						"eb3993c5-35ee-43da-8a83-87c13089f7a2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
